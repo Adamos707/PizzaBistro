@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BAVARO Pizzeria Bydgoszcz – Pizza 24/30/41 cm | Al. Wojska Polskiego 20d</title>
+  <meta name="description" content="BAVARO Pizzeria w Bydgoszczy (Al. Wojska Polskiego 20d, przy stacji Circle K) – ponad 70 pizz w trzech rozmiarach: 24, 30 i 41 cm. Zamów telefonicznie lub na wynos." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="BAVARO Pizzeria" />
+  <link rel="icon" type="image/png" href="Logo.png" />
+
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:title" content="BAVARO Pizzeria Bydgoszcz – Pizza 24/30/41 cm" />
+  <meta property="og:description" content="Ponad 70 pizz w trzech rozmiarach. Al. Wojska Polskiego 20d, Bydgoszcz (przy stacji Circle K)." />
+  <meta property="og:image" content="Logo.png" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:site_name" content="BAVARO Pizzeria" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "BAVARO Pizzeria",
+    "url": "https://www.pizzeriabavaro.pl/",
+    "image": "Logo.png",
+    "servesCuisine": ["Pizza"],
+    "priceRange": "20-70 PLN",
+    "telephone": ["+48511574223", "+48516139457"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Al. Wojska Polskiego 20d",
+      "addressLocality": "Bydgoszcz",
+      "addressCountry": "PL"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "11:30", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "11:30", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "11:30", "closes": "21:00" }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:   #0d0d0d;
+      --charcoal:#1a1a1a;
+      --stone:   #2a2a2a;
+      --ash:     #3d3d3d;
+      --mist:    #9a9a9a;
+      --cream:   #e8e0d0;
+      --warm:    #c9a96e;
+      --white:   #f5f2ed;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--cream); font-family: 'Jost', sans-serif; font-weight: 300; letter-spacing: 0.02em; overflow-x: hidden; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem; background: transparent; transition: background 0.4s, backdrop-filter 0.4s; }
+    nav.scrolled { background: rgba(13,13,13,0.92); backdrop-filter: blur(8px); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white); text-decoration: none; cursor: pointer; }
+    .nav-logo span { color: var(--warm); }
+    .nav-links { display: flex; gap: 2.4rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--mist); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; transition: color 0.25s; }
+    .nav-links a:hover { color: var(--warm); }
+
+    /* HERO */
+    #hero { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 30%, rgba(201,169,110,0.10) 0%, transparent 60%), radial-gradient(ellipse at 80% 70%, rgba(192,57,43,0.08) 0%, transparent 55%), var(--black); }
+    .hero-content { position: relative; z-index: 2; }
+    .hero-logo { width: 70%; margin: 0 auto 2.4rem; animation: ringFade 1.4s ease both; }
+    .hero-logo img { width: 100%; height: auto; }
+    .hero-kicker { display:block; font-family:'Jost',sans-serif; font-style:normal; font-size:0.78rem; font-weight:500; letter-spacing:0.3em; text-transform:uppercase; color:var(--warm); margin-bottom:0.9rem; }
+    .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5.5vw, 4.2rem); font-weight: 300; font-style: italic; line-height: 1.15; color: var(--white); max-width: 680px; margin: 0 auto 1.6rem; animation: fadeUp 1.2s 0.3s ease both; }
+    .hero-tagline em { color: var(--warm); font-style: normal; font-weight: 600; }
+    .hero-sub { font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mist); margin-bottom: 2.8rem; animation: fadeUp 1.2s 0.5s ease both; }
+    .hero-cta { display: inline-block; text-decoration: none; border: 1px solid var(--warm); color: var(--warm); padding: 0.85rem 2.6rem; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; transition: background 0.3s, color 0.3s; animation: fadeUp 1.2s 0.7s ease both; }
+    .hero-cta:hover { background: var(--warm); color: var(--black); }
+    .scroll-hint { position: absolute; bottom: 2.4rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.4rem; color: var(--mist); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; animation: pulse 2.5s infinite; }
+
+    /* SECTIONS */
+    section { padding: 7rem 2rem; scroll-margin-top: 90px; }
+    .section-label { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm); margin-bottom: 0.8rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--white); line-height: 1.2; }
+    .divider { width: 40px; height: 1px; background: var(--warm); margin: 1.6rem 0 2.8rem; }
+
+    /* ABOUT */
+    #about { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; scroll-margin-top: 130px; }
+    .about-text p { color: var(--mist); line-height: 1.9; font-size: 0.95rem; margin-bottom: 1rem; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .stat { border-left: 1px solid var(--ash); padding-left: 1.2rem; }
+    .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--warm); line-height: 1; }
+    .stat-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mist); margin-top: 0.3rem; }
+
+    /* MENU */
+    #menu {
+      background-color: #0b0a09;
+      background-image:
+        radial-gradient(ellipse at 18% 8%, rgba(150,120,80,0.10) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 92%, rgba(70,30,20,0.12) 0%, transparent 55%),
+        linear-gradient(165deg, #201e1b 0%, #131211 45%, #080706 100%);
+      padding: 7rem 2rem 9rem;
+    }
+    .menu-inner { max-width: 1100px; margin: 0 auto; }
+    .menu-header { text-align: center; margin-bottom: 4rem; }
+    .menu-header .divider { margin: 1.6rem auto 0; }
+    .menu-note { margin-top: 1.2rem; font-size: 0.78rem; color: var(--mist); letter-spacing: 0.08em; }
+
+    /* TABS */
+    .menu-tabs { display: flex; justify-content: center; gap: 0.4rem; margin-bottom: 3.5rem; flex-wrap: wrap; }
+    .tab-btn { display: inline-block; background: none; border: 1px solid var(--ash); color: var(--mist); padding: 0.6rem 1.6em; font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: all 0.25s; }
+    .tab-btn.active, .tab-btn:hover { border-color: var(--warm); color: var(--warm); }
+    .menu-category { position: relative; display: none; scroll-margin-top: 180px; }
+    .menu-category.active { display: block; }
+
+    /* SIDE IMAGES */
+    .menu-side-imgs { position: absolute; top: 20%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 2rem; z-index: 1; pointer-events: none; }
+    .menu-side-imgs.side-left { left: -270px; align-items: flex-end; }
+    .menu-side-imgs.side-right { right: -270px; align-items: flex-start; }
+    .menu-side-imgs img { width: 230px; height: auto; display: block; filter: drop-shadow(0 16px 28px rgba(0,0,0,0.55)); }
+    @media (max-width: 1500px) {
+      .menu-side-imgs { display: none; }
+    }
+
+    /* PIZZA SECTIONS */
+    .pizza-section-header { display: flex; align-items: center; gap: 1.2rem; margin: 2.8rem 0 1.4rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--ash); }
+    .pizza-section-header:first-child { margin-top: 0; }
+    .pizza-section-label { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--white); font-weight: 300; letter-spacing: 0.1em; }
+    .pizza-size-badge { font-size: 0.8rem; letter-spacing: 0.15em; color: var(--mist); border: 1px solid var(--ash); padding: 0.3rem 0.75rem; border-radius: 20px; }
+
+    /* MULTI-SIZE PRICE GRID */
+    .menu-item-multi { display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 1.2rem; border-bottom: 1px solid var(--stone); gap: 1.2rem; transition: background 0.2s; }
+    .menu-item-multi:hover { background: rgba(201,169,110,0.04); }
+    .menu-item-multi .menu-item-left { flex: 1; min-width: 0; }
+    .item-name { font-size: 1.2rem; color: var(--white); font-weight: 400; margin-bottom: 0.3rem; }
+    .item-desc { font-size: 1rem; color: var(--mist); line-height: 1.5; }
+    .price-row { display: flex; gap: 1.5rem; flex: 0 0 auto; }
+    .price-col { display: flex; flex-direction: column; align-items: flex-end; min-width: 58px; }
+    .price-col .size-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ash); margin-bottom: 0.25rem; }
+    .price-col .size-price { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--warm); font-weight: 400; white-space: nowrap; }
+
+    /* MENU NOTE SMALL */
+    .menu-note-small { margin-top: 2rem; padding: 0.8rem 1.2rem; border-left: 1px solid var(--ash); font-size: 0.75rem; color: var(--mist); line-height: 1.7; }
+
+    /* DODATKI (single item, single price) */
+    .menu-item { display: flex; justify-content: space-between; align-items: baseline; padding: 1.15rem 1.2rem; border-bottom: 1px solid var(--stone); gap: 1rem; transition: background 0.2s; }
+    .menu-item:hover { background: rgba(201,169,110,0.04); }
+    .menu-item-left { flex: 1; }
+    .item-price { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--warm); white-space: nowrap; font-weight: 400; }
+
+    /* INFO */
+    #info { background: var(--black); }
+    .info-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; }
+    .hours-table { width: 100%; margin-top: 1rem; }
+    .hours-row { display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 0; border-bottom: 1px solid var(--stone); font-size: 0.88rem; }
+    .hours-day { color: var(--mist); }
+    .hours-time { color: var(--white); font-weight: 400; }
+    .kitchen-note { margin-top: 1.4rem; padding: 1rem 1.2rem; border-left: 2px solid var(--warm); font-size: 0.8rem; color: var(--mist); line-height: 1.7; background: rgba(201,169,110,0.04); }
+    .kitchen-note strong { color: var(--warm); font-weight: 500; }
+    .address-block { margin-top: 1rem; }
+    .address-line { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: var(--white); line-height: 1.4; }
+    .address-city { font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--warm); margin-top: 0.4rem; margin-bottom: 2rem; }
+    .map-box { width: 100%; height: 220px; border: 1px solid var(--stone); overflow: hidden; position: relative; margin-bottom: 2rem; }
+    .map-box iframe { width: 100%; height: 100%; border: none; }
+    .contact-links { display: flex; flex-direction: column; gap: 0.7rem; }
+    .contact-link { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: var(--mist); font-size: 0.9rem; letter-spacing: 0.05em; transition: color 0.25s; }
+    .contact-link:hover { color: var(--warm); }
+    .contact-link .icon { width: 34px; height: 34px; border: 1px solid var(--ash); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; transition: border-color 0.25s; }
+    .contact-link:hover .icon { border-color: var(--warm); }
+
+    /* FOOTER */
+    footer { background: var(--charcoal); text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--stone); }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--warm); margin-bottom: 0.6rem; }
+    .footer-sub { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream); line-height: 1.9; }
+    .footer-contact { margin-top: 0.8rem; display:flex; gap:0.6rem; justify-content:center; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; }
+    .footer-contact a { color: var(--warm); text-decoration: none; }
+    .footer-contact a:hover { text-decoration: underline; }
+
+    /* ANIMATIONS */
+    @keyframes ringFade { from { opacity:0; transform: scale(0.85); } to { opacity:1; transform: scale(1); } }
+    @keyframes fadeUp { from { opacity:0; transform: translateY(24px); } to { opacity:1; transform: translateY(0); } }
+    @keyframes pulse { 0%,100% { opacity:0.4; } 50% { opacity:0.9; } }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.6rem; }
+      .nav-links { display: none; }
+      #about { grid-template-columns: 1fr; gap: 3rem; }
+      .info-inner { grid-template-columns: 1fr; gap: 4rem; }
+      .menu-item-multi { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+      .price-row { align-self: stretch; justify-content: space-between; }
+    }
+  </style>
+</head>
+<body id="top">
+
+<nav id="navbar">
+  <a href="#top" class="nav-logo">BAVARO <span>·</span> Pizzeria</a>
+  <ul class="nav-links">
+    <li><a href="#about">O nas</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#info">Kontakt</a></li>
+  </ul>
+</nav>
+
+<main>
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-logo">
+      <img id="Logo" src="Logo.png" alt="BAVARO Pizzeria" fetchpriority="high" />
+    </div>
+    <h1 class="hero-tagline"><span class="hero-kicker">Pizza w trzech rozmiarach</span>Smaki, które <em>zostają</em><br/>w pamięci</h1>
+    <p class="hero-sub">24 / 30 / 41 cm · Al. Wojska Polskiego 20d, Bydgoszcz</p>
+    <a href="#menu" class="hero-cta">Sprawdź menu</a>
+  </div>
+  <div class="scroll-hint">
+    <span>↓</span>
+    <span>Przewiń</span>
+  </div>
+</section>
+
+<section>
+  <div id="about">
+    <div class="about-text reveal">
+      <div class="section-label">O lokalu</div>
+      <h2 class="section-title">Ponad 70 pizz,<br/>trzy rozmiary do wyboru</h2>
+      <div class="divider"></div>
+      <p>BAVARO Pizzeria to szeroki wybór pizzy w rozmiarach 24, 30 i 41 cm – od klasyki, przez warianty z kurczakiem i kebabem, po ostre nowości i propozycje wegetariańskie.</p>
+      <p>Przy stacji Circle K, Al. Wojska Polskiego 20d w Bydgoszczy – zamów telefonicznie lub odbierz na miejscu.</p>
+    </div>
+    <div class="about-stats reveal">
+      <div class="stat"><div class="stat-number">70+</div><div class="stat-label">Pozycji z pizzą</div></div>
+      <div class="stat"><div class="stat-number">3</div><div class="stat-label">Rozmiary do wyboru</div></div>
+      <div class="stat"><div class="stat-number">7</div><div class="stat-label">Kategorii pizzy</div></div>
+      <div class="stat"><div class="stat-number">7</div><div class="stat-label">Dni w tygodniu</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="menu-inner">
+    <div class="menu-header reveal">
+      <div class="section-label">Co serwujemy</div>
+      <h2 class="section-title">Menu: pizza i dodatki</h2>
+      <div class="divider"></div>
+      <p class="menu-note">Wszystkie pizze na cieście z sosem i serem, w rozmiarach 24 / 30 / 41 cm (pizza amerykańska: 24 / 30 cm)</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="menu-tabs reveal">
+      <a href="#tab-tradycyjne" class="tab-btn active" data-tab="tradycyjne">Tradycyjne</a>
+      <a href="#tab-kurczak" class="tab-btn" data-tab="kurczak">Z kurczakiem</a>
+      <a href="#tab-kebab" class="tab-btn" data-tab="kebab">Z kebabem</a>
+      <a href="#tab-jajko" class="tab-btn" data-tab="jajko">Z jajkiem</a>
+      <a href="#tab-ostro" class="tab-btn" data-tab="ostro">Na ostro</a>
+      <a href="#tab-wege" class="tab-btn" data-tab="wege">Wegetariańskie</a>
+      <a href="#tab-ameryk" class="tab-btn" data-tab="ameryk">Amerykańskie</a>
+      <a href="#tab-dodatki" class="tab-btn" data-tab="dodatki">Sosy &amp; Dodatki</a>
+    </div>
+
+    <!-- TRADYCYJNE -->
+    <div class="menu-category active" id="tab-tradycyjne">
+      <div class="menu-side-imgs side-left"><img src="pepperoni2.png" alt="Pizza z pepperoni" loading="lazy"></div>
+      <div class="pizza-section-header">
+        <span class="pizza-section-label">Pizze tradycyjne</span>
+        <span class="pizza-size-badge">24 / 30 / 41 cm</span>
+      </div>
+      <div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Margharita</div><div class="item-desc">ciasto, sos, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">19,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">37,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">55,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Ziołowa</div><div class="item-desc">ciasto, sos, ser, zioła prowansalskie, oregano</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">20,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">38,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">56,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Amigo</div><div class="item-desc">ciasto, sos, pieczarki, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">21,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">39,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">57,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Vesuvio</div><div class="item-desc">ciasto, sos, szynka, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">22,10</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">40,20</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">58,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Sycylia</div><div class="item-desc">ciasto, sos, salami, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">22,10</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">40,20</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">58,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Verona</div><div class="item-desc">ciasto, sos, szynka, por, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">23,10</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">41,20</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">59,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Wiejska</div><div class="item-desc">ciasto, sos, boczek, cebula, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">23,10</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">41,20</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">59,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Capri</div><div class="item-desc">ciasto, sos, pieczarki, szynka, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">23,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">41,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">59,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Paola</div><div class="item-desc">ciasto, sos, pieczarki, szynka, cebula, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">24,10</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">42,20</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">60,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Hawajska</div><div class="item-desc">ciasto, sos, szynka, ananas, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">24,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">42,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">60,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Toscana</div><div class="item-desc">ciasto, sos, pieczarki, salami, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">24,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">42,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">60,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Las Palmas</div><div class="item-desc">ciasto, sos, pieczarki, szynka, kukurydza, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">24,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">42,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">60,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Timida</div><div class="item-desc">ciasto, sos, boczek, ogórek konserwowy, cebula, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">24,90</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">43,00</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">60,80</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Napoli</div><div class="item-desc">ciasto, sos, salami, papryka pepperoni, papryka, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">24,90</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">43,00</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">60,80</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Swojska</div><div class="item-desc">ciasto, sos, kiełbasa, cebula, ogórek konserwowy, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">24,90</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">43,00</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">60,80</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Zwyczajna</div><div class="item-desc">ciasto, sos, pieczarki, kiełbasa, cebula, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">25,10</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">43,20</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">61,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Barcelona</div><div class="item-desc">ciasto, sos, pieczarki, szynka, papryka, cebula, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">25,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">43,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">61,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Italia</div><div class="item-desc">ciasto, sos, pieczarki, szynka, papryka, por, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">25,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">43,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">61,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Palermo</div><div class="item-desc">ciasto, sos, tuńczyk, cebula, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">26,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">44,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">62,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Constanza</div><div class="item-desc">ciasto, sos, salami, ananas, oliwki, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">26,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">44,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">62,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Tuna</div><div class="item-desc">ciasto, sos, pieczarki, tuńczyk, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">28,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">46,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">64,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Bosfo</div><div class="item-desc">ciasto, sos, szynka, tuńczyk, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">29,10</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">47,20</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">65,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Mediolan</div><div class="item-desc">ciasto, sos, salami, cebula, pomidor, oregano, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">30,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">49,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">67,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Carbonara</div><div class="item-desc">ciasto, sos carbonara, boczek, cebula, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">30,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">49,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">67,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Altono</div><div class="item-desc">ciasto, sos, pieczarki, tuńczyk, oliwki, cebula, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">31,10</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">50,20</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">68,40</span></div></div></div>
+      </div>
+    </div>
+
+    <!-- Z KURCZAKIEM -->
+    <div class="menu-category" id="tab-kurczak">
+      <div class="menu-side-imgs side-right"><img src="miesna.png" alt="Pizza mięsna" loading="lazy"></div>
+      <div class="pizza-section-header">
+        <span class="pizza-section-label">Pizze z kurczakiem</span>
+        <span class="pizza-size-badge">24 / 30 / 41 cm</span>
+      </div>
+      <div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Gold</div><div class="item-desc">ciasto, sos, kurczak, oregano, zioła prowansalskie, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">27,70</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">45,80</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">63,60</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Rio</div><div class="item-desc">ciasto, sos, kurczak, ogórek konserwowy, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">28,10</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">46,20</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">64,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Fiesta</div><div class="item-desc">ciasto, sos, pieczarki, kurczak, kukurydza, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">28,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">46,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">64,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Chicken</div><div class="item-desc">ciasto, sos, pieczarki, kurczak, cebula, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">28,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">46,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">64,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Arizona</div><div class="item-desc">ciasto, sos, kurczak, ananas, kukurydza, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">29,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">47,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">65,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Vegas</div><div class="item-desc">ciasto, sos, kurczak, oliwki, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">29,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">48,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">66,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Kujawska</div><div class="item-desc">ciasto, sos, kurczak, ser wędzony, pomidory, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">30,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">49,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">67,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Mexicana</div><div class="item-desc">ciasto, sos, pieczarki, kurczak, pepperoni, kukurydza, cebula, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">30,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">49,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">67,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Texsas</div><div class="item-desc">ciasto, kurczak, sos BBQ, cebula, kukurydza, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">31,10</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">50,20</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">68,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Neapolitana</div><div class="item-desc">ciasto, sos, brokuły, kurczak, sos holenderski, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">31,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">50,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">68,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Bombaj</div><div class="item-desc">ciasto, sos, ananas, kurczak, sos holenderski, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">31,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">50,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">68,40</span></div></div></div>
+      </div>
+    </div>
+
+    <!-- Z KEBABEM -->
+    <div class="menu-category" id="tab-kebab">
+      <div class="menu-side-imgs side-left"><img src="pizzaZOliwkami.png" alt="Pizza z oliwkami" loading="lazy"></div>
+      <div class="pizza-section-header">
+        <span class="pizza-section-label">Pizze z kebabem</span>
+        <span class="pizza-size-badge">24 / 30 / 41 cm</span>
+      </div>
+      <div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Sultan</div><div class="item-desc">ciasto, sos, mięso kebab, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">24,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">42,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">60,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Venore</div><div class="item-desc">ciasto, sos, mięso kebab, cebula, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">25,10</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">43,20</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">61,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Thais</div><div class="item-desc">ciasto, sos, mięso kebab, pieczarki, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">26,10</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">44,20</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">62,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Anatolia</div><div class="item-desc">ciasto, sos, mięso kebab, papryka, cebula, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">26,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">44,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">62,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Edron</div><div class="item-desc">ciasto, sos, mięso kebab, cebula, ogórek, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">26,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">44,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">62,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Istambul</div><div class="item-desc">ciasto, sos, mięso kebab, boczek, pieczarki, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">28,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">46,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">64,40</span></div></div></div>
+      </div>
+    </div>
+
+    <!-- Z JAJKIEM -->
+    <div class="menu-category" id="tab-jajko">
+      <div class="menu-side-imgs side-right"><img src="pepperoni2.png" alt="Pizza z pepperoni" loading="lazy"></div>
+      <div class="pizza-section-header">
+        <span class="pizza-section-label">Pizze z jajkiem</span>
+        <span class="pizza-size-badge">24 / 30 / 41 cm</span>
+      </div>
+      <div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Polska</div><div class="item-desc">ciasto, sos, szynka, por, jajko, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">29,10</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">47,20</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">65,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Litewska</div><div class="item-desc">ciasto, sos, boczek, cebula, jajko, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">29,10</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">47,20</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">65,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Chłopska</div><div class="item-desc">ciasto, sos, pieczarki, kiełbasa, cebula, jajko, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">30,10</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">49,20</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">67,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Konrado</div><div class="item-desc">ciasto, sos, pieczarki, szynka, kurczak, por, jajko, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">31,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">50,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">68,40</span></div></div></div>
+      </div>
+    </div>
+
+    <!-- NA OSTRO -->
+    <div class="menu-category" id="tab-ostro">
+      <div class="menu-side-imgs side-left"><img src="miesna.png" alt="Pizza mięsna" loading="lazy"></div>
+      <div class="pizza-section-header">
+        <span class="pizza-section-label">Pizze na ostro 🌶️</span>
+        <span class="pizza-size-badge">24 / 30 / 41 cm</span>
+      </div>
+      <div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Jalapeño</div><div class="item-desc">ciasto, sos, pieczarki, salami, jalapeño, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">27,30</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">45,40</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">63,20</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Volcano</div><div class="item-desc">ciasto, sos, salami, oliwki, jalapeño, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">27,30</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">45,40</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">63,20</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Honolulu</div><div class="item-desc">ciasto, sos, szynka, ananas, jalapeño, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">28,10</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">46,20</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">64,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Dragon</div><div class="item-desc">ciasto, sos, kebab, tabasco, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">29,90</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">48,00</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">65,80</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Rzeźnik</div><div class="item-desc">ciasto, sos vi-fon, szynka, papryka pepperoni, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">29,90</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">48,00</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">65,80</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Deluxe</div><div class="item-desc">ciasto, sos, pieczarki, tuńczyk, jalapeño, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">30,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">48,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">66,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Diablo</div><div class="item-desc">ciasto, sos, salami, boczek, pepperoni, cebula, tabasco, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">30,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">48,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">66,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Ognista</div><div class="item-desc">ciasto, sos, boczek, kurczak, jalapeño, tabasco, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">31,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">50,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">68,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Inferno</div><div class="item-desc">ciasto, sos, pieczarki, szynka, sos chili Sriracha, jalapeño, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">31,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">50,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">68,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Big brother</div><div class="item-desc">ciasto, sos, salami, jalapeño, kurczak, oregano, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">34,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">53,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">71,40</span></div></div></div>
+      </div>
+    </div>
+
+    <!-- WEGETARIAŃSKIE -->
+    <div class="menu-category" id="tab-wege">
+      <div class="menu-side-imgs side-right"><img src="pizzaZOliwkami.png" alt="Pizza z oliwkami" loading="lazy"></div>
+      <div class="pizza-section-header">
+        <span class="pizza-section-label">Pizze wegetariańskie 🌿</span>
+        <span class="pizza-size-badge">24 / 30 / 41 cm</span>
+      </div>
+      <div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Primavera</div><div class="item-desc">ciasto, sos, pieczarki, por, kukurydza, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">24,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">42,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">60,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Zimowa</div><div class="item-desc">ciasto, sos, ogórek konserwowy, kukurydza, papryka, cebula, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">25,70</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">43,80</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">61,60</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Wege</div><div class="item-desc">ciasto, sos, papryka, oliwki, kukurydza, cebula, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">25,70</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">43,80</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">61,60</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Warzywna</div><div class="item-desc">ciasto, sos, pieczarki, pomidory, oliwki, cebula, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">28,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">46,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">64,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">4 sery</div><div class="item-desc">ciasto, sos, sery: gouda, sałatkowo-kanapkowy, mozzarella, wędzony</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">33,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">52,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">70,40</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Grecka</div><div class="item-desc">ciasto, sos, oliwki, pomidor, ser sałatkowo-kanapkowy, brokuł, zioła, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">35,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">54,60</span></div><div class="price-col"><span class="size-label">41</span><span class="size-price">72,40</span></div></div></div>
+      </div>
+    </div>
+
+    <!-- AMERYKAŃSKIE -->
+    <div class="menu-category" id="tab-ameryk">
+      <div class="menu-side-imgs side-left"><img src="pepperoni2.png" alt="Pizza z pepperoni" loading="lazy"></div>
+      <div class="pizza-section-header">
+        <span class="pizza-section-label">Amerykańskie, grubsze ciasto</span>
+        <span class="pizza-size-badge">24 / 30 cm</span>
+      </div>
+      <div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Missisipi</div><div class="item-desc">ciasto, sos, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">27,90</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">46,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">New York</div><div class="item-desc">ciasto, sos, pieczarki, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">29,90</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">48,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Chicago</div><div class="item-desc">ciasto, sos, szynka, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">30,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">48,60</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Oklahoma</div><div class="item-desc">ciasto, sos, salami, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">30,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">48,60</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">American Classic</div><div class="item-desc">ciasto, sos, szynka, pieczarki, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">30,90</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">50,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Big Havana</div><div class="item-desc">ciasto, sos, szynka, ananas, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">31,90</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">51,00</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Nevada</div><div class="item-desc">ciasto, sos, salami, boczek, cebula, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">32,70</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">51,80</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Atlanta</div><div class="item-desc">ciasto, sos, szynka, boczek, por, jajko, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">33,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">52,60</span></div></div></div>
+        <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">Colorado</div><div class="item-desc">ciasto, sos, salami, pieczarki, cebula, papryka, ser</div></div><div class="price-row"><div class="price-col"><span class="size-label">24</span><span class="size-price">33,50</span></div><div class="price-col"><span class="size-label">30</span><span class="size-price">52,60</span></div></div></div>
+      </div>
+      <div class="menu-note-small">Do pizzy na wynos należy doliczyć koszt kartonu: <strong style="color:var(--warm)">2,50 zł</strong></div>
+    </div>
+
+    <!-- SOSY & DODATKI -->
+    <div class="menu-category" id="tab-dodatki">
+      <div class="menu-side-imgs side-right"><img src="sosy.png" alt="Sosy" loading="lazy"></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem;">
+        <div>
+          <div class="pizza-section-header"><span class="pizza-section-label">Sosy 80 ml</span></div>
+          <div class="menu-item">
+            <div class="menu-item-left"><div class="item-name">łagodny, czosnkowy, pomidorowy, słodki czosnek, ketchup, meksykański, ostry, 1000-wysp, salsa, BBQ</div></div>
+            <div class="item-price">3,00 zł</div>
+          </div>
+        </div>
+        <div>
+          <div class="pizza-section-header"><span class="pizza-section-label">Dodatki</span><span class="pizza-size-badge">24 / 30 / 41 cm</span></div>
+          <div class="menu-item-multi"><div class="menu-item-left"><div class="item-desc">zioła prowansalskie, oregano, cebula, por, ogórek konserwowy, sos pomidorowy</div></div><div class="price-row"><div class="price-col"><span class="size-price">2,30</span></div><div class="price-col"><span class="size-price">3,80</span></div><div class="price-col"><span class="size-price">5,80</span></div></div></div>
+          <div class="menu-item-multi"><div class="menu-item-left"><div class="item-desc">pieczarki, papryka, papryka pepperoni, oliwki, kukurydza</div></div><div class="price-row"><div class="price-col"><span class="size-price">2,80</span></div><div class="price-col"><span class="size-price">4,50</span></div><div class="price-col"><span class="size-price">6,50</span></div></div></div>
+          <div class="menu-item-multi"><div class="menu-item-left"><div class="item-desc">szynka, kiełbasa, pomidor, brokuły, ananas, jalapeño, sos tabasco, sos chili Sriracha</div></div><div class="price-row"><div class="price-col"><span class="size-price">3,50</span></div><div class="price-col"><span class="size-price">5,10</span></div><div class="price-col"><span class="size-price">7,10</span></div></div></div>
+          <div class="menu-item-multi"><div class="menu-item-left"><div class="item-desc">boczek, kebab, salami, tuńczyk, ser wędzony, ser sałatkowo-kanapkowy</div></div><div class="price-row"><div class="price-col"><span class="size-price">3,70</span></div><div class="price-col"><span class="size-price">5,40</span></div><div class="price-col"><span class="size-price">7,30</span></div></div></div>
+          <div class="menu-item-multi"><div class="menu-item-left"><div class="item-desc">sos holenderski, sos vi-fon, sos BBQ, mięso z kurczaka, ser żółty, ser mozzarella, sos carbonara</div></div><div class="price-row"><div class="price-col"><span class="size-price">4,00</span></div><div class="price-col"><span class="size-price">5,70</span></div><div class="price-col"><span class="size-price">8,10</span></div></div></div>
+          <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">jajko</div></div><div class="price-row"><div class="price-col"><span class="size-price">2,50</span></div><div class="price-col"><span class="size-price">2,50</span></div><div class="price-col"><span class="size-price">3,50</span></div></div></div>
+          <div class="menu-item-multi"><div class="menu-item-left"><div class="item-name">podwójne ciasto</div></div><div class="price-row"><div class="price-col"><span class="size-price">3,20</span></div><div class="price-col"><span class="size-price">3,70</span></div><div class="price-col"><span class="size-price">3,70</span></div></div></div>
+        </div>
+      </div>
+      <div class="menu-note-small">Do pizzy na wynos należy doliczyć koszt kartonu w wysokości <strong style="color:var(--warm)">2,50 zł</strong>.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- INFO -->
+<section id="info">
+  <div class="info-inner">
+    <div class="reveal">
+      <div class="section-label">Kiedy pracujemy</div>
+      <h2 class="section-title">Godziny<br/>otwarcia</h2>
+      <div class="divider"></div>
+      <div class="hours-table">
+        <div class="hours-row"><span class="hours-day">Poniedziałek – Czwartek</span><span class="hours-time">11:30 – 21:00</span></div>
+        <div class="hours-row"><span class="hours-day">Piątek – Sobota</span><span class="hours-time">11:30 – 22:00</span></div>
+        <div class="hours-row"><span class="hours-day">Niedziela</span><span class="hours-time">11:30 – 21:00</span></div>
+      </div>
+      <div class="kitchen-note">
+        <strong>🍕 Zamówienia na wynos</strong><br/>
+        Do pizzy na wynos doliczamy koszt kartonu w wysokości 2,50 zł.
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="section-label">Gdzie jesteśmy</div>
+      <h2 class="section-title">Lokalizacja</h2>
+      <div class="divider"></div>
+      <div class="address-block">
+        <div class="address-line">Al. Wojska Polskiego 20d</div>
+        <div class="address-city">Bydgoszcz · przy stacji Circle K</div>
+      </div>
+      <div class="map-box">
+        <iframe src="https://www.google.com/maps?q=Al.+Wojska+Polskiego+20d,+Bydgoszcz&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+      <div class="contact-links">
+        <a href="tel:+48511574223" class="contact-link"><span class="icon">📞</span>511-574-223</a>
+        <a href="tel:+48516139457" class="contact-link"><span class="icon">📞</span>516-139-457</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-logo">BAVARO</div>
+  <div class="footer-sub">Pizzeria · Al. Wojska Polskiego 20d, Bydgoszcz<br/>Pn–Czw 11:30–21:00 · Pt–Sb 11:30–22:00 · Nd 11:30–21:00</div>
+  <div class="footer-contact">
+    <a href="tel:+48511574223">511 574 223</a>
+    <span aria-hidden="true">·</span>
+    <a href="tel:+48516139457">516 139 457</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://www.google.com/maps/search/?api=1&query=Al.+Wojska+Polskiego+20d,+Bydgoszcz" target="_blank" rel="noopener">Zobacz na mapie</a>
+  </div>
+</footer>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.menu-category').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
